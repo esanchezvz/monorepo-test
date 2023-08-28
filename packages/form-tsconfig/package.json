@@ -4,5 +4,8 @@
   "private": true,
   "license": "MIT",
   "description": "Typescript configuration for FORM's projects.",
-  "author": "Esteban Sánchez <esteban@formkitchens.com>"
+  "author": {
+    "name": "Esteban Sánchez",
+    "email": "esteban@formkitchens.com"
+  }
 }
