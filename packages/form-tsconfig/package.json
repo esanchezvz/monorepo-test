@@ -1,0 +1,8 @@
+{
+  "name": "@form/tsconfig",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "description": "Typescript configuration for FORM's projects.",
+  "author": "Esteban Sánchez <esteban@formkitchens.com>"
+}
