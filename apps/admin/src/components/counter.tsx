@@ -10,7 +10,9 @@ export function Counter() {
 
   return (
     <>
-      <Button onClick={handleClick}>Click Me!</Button>
+      <Button variant="secondary" size="sm" onClick={handleClick}>
+        Click Me!
+      </Button>
       <p>You&apos;ve clicked the button {count} times.</p>
     </>
   )
