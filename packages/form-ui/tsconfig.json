@@ -1,7 +1,11 @@
 {
   "extends": "@form/tsconfig/react.json",
   "compilerOptions": {
+    "module": "esnext",
+    "target": "ESNext",
+    "moduleResolution": "Node",
     "baseUrl": ".",
+    "outDir": "dist",
     "paths": {
       "@/*": ["./src/*"]
     }

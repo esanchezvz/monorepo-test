@@ -7,9 +7,10 @@
   },
   "scripts": {
     "build": "turbo run build",
+    "clean": "turbo run clean && rm -rf node_modules",
     "dev": "turbo run dev",
-    "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "lint": "turbo run lint",
     "precommit": "lint-staged",
     "prepare": "husky install"
   },

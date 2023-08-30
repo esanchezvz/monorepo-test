@@ -1,4 +1,4 @@
-@import 'node_modules/@form/ui/dist/index.css';
+@import '@form/ui/dist/index.css';
 
 @tailwind components;
 @tailwind utilities;
