@@ -1,0 +1,11 @@
+{
+  "name": "@form/tailwind-config",
+  "version": "1.0.0",
+  "license": "ISC",
+  "dependencies": {
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.3.3"
+  }
+}
