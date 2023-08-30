@@ -1,0 +1,8 @@
+@import 'node_modules/@form/ui/dist/index.css';
+
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: sans-serif;
+}
