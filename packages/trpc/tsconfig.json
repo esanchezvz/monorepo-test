@@ -1,0 +1,8 @@
+{
+  "extends": "@form/tsconfig/node16.json",
+  "exclude": ["node_modules"],
+  "references": [{ "path": "../db" }],
+  "compilerOptions": {
+    "types": ["@prisma/client"]
+  }
+}

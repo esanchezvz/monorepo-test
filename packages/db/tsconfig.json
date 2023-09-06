@@ -1,0 +1,7 @@
+{
+  "extends": "@form/tsconfig/node16.json",
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "composite": true
+  }
+}

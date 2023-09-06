@@ -1,0 +1,21 @@
+{
+  "name": "@form/trpc",
+  "version": "0.0.0",
+  "description": "",
+  "main": "src/index.ts",
+  "scripts": {
+    "clean": "rm -rf .turbo && rm -rf node_modules"
+  },
+  "dependencies": {
+    "@form/db": "workspace:*",
+    "@trpc/server": "^10.38.1",
+    "superjson": "^1.13.1"
+  },
+  "devDependencies": {
+    "@form/tsconfig": "workspace:*",
+    "zod": ">=3"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
