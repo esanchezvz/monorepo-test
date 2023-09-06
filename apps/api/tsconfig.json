@@ -1,0 +1,14 @@
+{
+  "extends": "@form/tsconfig/node16.json",
+  "compilerOptions": {
+    "plugins": [{ "name": "api" }],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "exclude": ["node_modules"],
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
+  }
+}
