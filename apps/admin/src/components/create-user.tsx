@@ -1,7 +1,13 @@
 import { api } from '@/api'
 
+const useCreateUser = () => {
+  const { mutate, ...rest } = api.user.create.useMutation()
+
+  return [mutate, { ...rest }] as const
+}
+
 const CreateUser = () => {
-  const { mutate } = api.user.create.useMutation()
+  const [createUser] = useCreateUser()
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault()
 
@@ -15,7 +21,7 @@ const CreateUser = () => {
       email: data.get('email') as string,
     }
 
-    mutate(user)
+    createUser(user)
   }
 
   return (

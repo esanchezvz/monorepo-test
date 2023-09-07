@@ -12,7 +12,8 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "lint": "turbo run lint",
     "precommit": "lint-staged",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "db:generate": "turbo run db:generate"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.7.1",
