@@ -4,8 +4,10 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "types": ["@prisma/client", "@form/trpc"]
   },
+  "references": [{ "path": "../../packages/db" }],
   "include": ["src"],
   "exclude": ["node_modules"]
 }

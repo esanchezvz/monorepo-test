@@ -28,7 +28,7 @@ const t = initTRPC.context<Context>().create({
   errorFormatter({ shape, error }) {
     return {
       ...shape,
-      message: JSON.parse(shape.message),
+      message: parseMessage(shape.message),
       data: {
         ...shape.data,
         stack: process.env.NODE_ENV === 'production' ? undefined : shape.data.stack,
@@ -37,6 +37,14 @@ const t = initTRPC.context<Context>().create({
     }
   },
 })
+
+const parseMessage = (message: string) => {
+  try {
+    return JSON.parse(message)
+  } catch (error) {
+    return message
+  }
+}
 
 export const createTRPCRouter = t.router
 

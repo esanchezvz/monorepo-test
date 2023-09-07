@@ -10,25 +10,20 @@ export const userRouter = createTRPCRouter({
     .input(
       z.object({
         name: z.string(),
-        email: z.string(),
+        email: z.string().email(),
       }),
     )
-    .mutation(async ({ input }) => {
-      // const { db } = ctx
-      // const { email, name } = input
+    .mutation(async ({ ctx, input }) => {
+      const { db } = ctx
+      const { email, name } = input
 
-      console.log({ input })
+      await db.user.create({
+        data: {
+          email,
+          name,
+        },
+      })
 
-      // const user = await db.user.create({
-      //   data: {
-      //     email,
-      //     name,
-      //   },
-      // })
-
-      return {
-        data: input,
-        message: 'User created successfuly.',
-      }
+      return 'User created successfuly.'
     }),
 })

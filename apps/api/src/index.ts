@@ -1,9 +1,11 @@
 import express from 'express'
+import cors from 'cors'
 import { appRouter, createExpressMiddleware, createTRPCContext } from '@form/trpc'
 
 const app = express()
 
 // Express middlewares
+app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use((req, _res, next) => {
