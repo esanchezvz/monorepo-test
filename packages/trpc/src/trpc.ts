@@ -3,14 +3,17 @@ import { ZodError } from 'zod'
 import superjson from 'superjson'
 import { type CreateExpressContextOptions } from '@trpc/server/adapters/express'
 import { PrismaClient } from '@form/db'
+import { isAuthed } from './middlewares'
 
 type CreateContextOptions = Record<string, never>
 
 const db = new PrismaClient()
 
 const createInnerTRPCContext = (_opts: CreateContextOptions) => {
+  const user = { id: '123' }
   return {
     db,
+    user,
   }
 }
 
@@ -38,6 +41,8 @@ const t = initTRPC.context<Context>().create({
   },
 })
 
+export const middleware = t.middleware
+
 const parseMessage = (message: string) => {
   try {
     return JSON.parse(message)
@@ -48,6 +53,6 @@ const parseMessage = (message: string) => {
 
 export const createTRPCRouter = t.router
 
-export const publicProcedure = t.procedure
+export const publicProcedure = t.procedure.use(isAuthed)
 
 export { createExpressMiddleware } from '@trpc/server/adapters/express'
